@@ -4,7 +4,7 @@
 $host = 'localhost:3307'; //your mysql host and port
 $db   = 'webpopmart_db';
 $user = 'root'; // your mysql username
-$pass = ''; // your mysql password
+$pass = 'whensley23'; // your mysql password
 $charset = 'utf8mb4';
 
 // PDO Connection Options
@@ -76,15 +76,11 @@ function createInstallMarker($marker_file) {
 try {
     // checks if database has been initialized
     if (!file_exists($install_marker)) {
-        echo "<!-- PopMart: Initializing database for first time... -->\n";
-        
-        // initialize the database
+        // initialize the database (no debug output)
         initializeDatabase($host, $user, $pass, $init_sql_file);
-        
+
         // create marker file to prevent re-initialization
         createInstallMarker($install_marker);
-        
-        echo "<!-- PopMart: Database initialization completed successfully -->\n";
     }
     
     // connect to the database
@@ -141,5 +137,35 @@ try {
 // success message for development (remove in production)
 if (isset($_GET['debug']) && $_GET['debug'] === 'db') {
     echo "<!-- PopMart: Database connected successfully -->\n";
+}
+
+// simple db wrapper for legacy code
+if (!function_exists('db_connect')) {
+    class PopmartDBWrapper {
+        private $pdo;
+        public function __construct($pdo) { $this->pdo = $pdo; }
+
+    // fetch one row
+        public function fetch_one($sql, $params = []) {
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->execute($params);
+            return $stmt->fetch();
+        }
+
+    // fetch all rows
+        public function fetchAll($sql, $params = []) {
+            if (!empty($params)) {
+                $stmt = $this->pdo->prepare($sql);
+                $stmt->execute($params);
+                return $stmt->fetchAll();
+            }
+            return $this->pdo->query($sql)->fetchAll();
+        }
+    }
+
+    function db_connect() {
+        global $pdo;
+        return new PopmartDBWrapper($pdo);
+    }
 }
 ?>

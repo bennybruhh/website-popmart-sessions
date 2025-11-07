@@ -220,7 +220,7 @@ $(function () {
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
-        url: "/website-popmart/db/signup_process.php", // backend file to handle insert
+        url: "/website-popmart-sessions/db/signup_process.php", // backend file to handle insert
         data: $(form).serialize(),
         success: function (response) {
           const res = response.trim();
@@ -275,16 +275,17 @@ $(function () {
     submitHandler: function (form) {
       $.ajax({
         type: "POST",
-        url: "/website-popmart/db/login_process.php",
+        url: "/website-popmart-sessions/db/login_process.php",
         data: $(form).serialize(),
         success: function (response) {
-          const res = response.trim();
-          if (res === "success") {
+          const res = (typeof response === 'string') ? response.trim() : '';
+          // defensive matching: allow the backend to accidentally include harmless debug text
+          if (/\bsuccess\b/.test(res)) {
             showFeedback('loginFeedback', 'success', 'Login successful! Redirecting...');
             setTimeout(function(){ location.reload(); }, 700);
-          } else if (res === "invalid_password") {
+          } else if (/\binvalid_password\b/.test(res)) {
             showFeedback('loginFeedback', 'danger', 'Wrong password. Please try again.');
-          } else if (res === "no_user") {
+          } else if (/\bno_user\b/.test(res)) {
             showFeedback('loginFeedback', 'warning', "No account yet. Please sign up to log in.");
           } else {
             showFeedback('loginFeedback', 'danger', 'Login failed. ' + response);

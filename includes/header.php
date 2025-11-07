@@ -14,7 +14,7 @@
   <!-- bootstrap icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <!-- bootstrap css -->
-  <link href="/website-popmart/dist/styles.css" rel="stylesheet">
+  <link href="/website-popmart-sessions/dist/styles.css" rel="stylesheet">
 </head>
 <body>
 <script>
@@ -24,7 +24,7 @@
 <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light custom-navbar fixed-top">
   <div class="container">
     <a class="navbar-brand" href="bootstrap.php">
-      <img src="/website-popmart/img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
+      <img src="/website-popmart-sessions/img/pop-mart-logo.png" alt="E-Shop Logo" width="150" height="40" class="d-inline-block align-text-top">
     </a>
 
     <!-- hamburger -->
@@ -35,18 +35,28 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto nav-links">
-            <li class="nav-item"><a class="nav-link <?php if($activePage == 'home') echo 'active'; ?>" href="/website-popmart/index.php">Home</a></li>
-            <li class="nav-item"><a class="nav-link <?php if($activePage == 'products') echo 'active'; ?>" href="/website-popmart/products.php">Products</a></li>
-            <li class="nav-item"><a class="nav-link <?php if($activePage == 'about') echo 'active'; ?>" href="/website-popmart/about.php">About</a></li>
-            <li class="nav-item"><a class="nav-link <?php if($activePage == 'contact') echo 'active'; ?>" href="/website-popmart/contact.php">Contact</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($activePage == 'home') echo 'active'; ?>" href="/website-popmart-sessions/index.php">Home</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($activePage == 'products') echo 'active'; ?>" href="/website-popmart-sessions/products.php">Products</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($activePage == 'about') echo 'active'; ?>" href="/website-popmart-sessions/about.php">About</a></li>
+            <li class="nav-item"><a class="nav-link <?php if($activePage == 'contact') echo 'active'; ?>" href="/website-popmart-sessions/contact.php">Contact</a></li>
+            </li>
             <li class="nav-item">
-              <a class="nav-link <?php if($activePage == 'cart') echo 'active'; ?> position-relative" href="/website-popmart/cart.php">
+              
+            <?php if (isset($_SESSION['user_id'])): ?>
+            <li class="nav-item">
+              <a class="nav-link <?php if($activePage == 'cart') echo 'active'; ?> position-relative" href="/website-popmart-sessions/cart.php">
                 <i class="bi bi-cart"></i> Cart
                 <span id="cartCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display:none;">0</span>
               </a>
             </li>
-            <li class="nav-item">
-                <?php if (isset($_SESSION['user_id'])): ?>
+                    <li class="nav-item">
+                                <a class="nav-link" href="/website-popmart-sessions/dashboard.php">Dashboard</a>
+                              </li>
+                              <?php if (isset($_SESSION['user_id']) && isset($activePage) && $activePage === 'dashboard'): ?>
+                              <li class="nav-item d-none d-lg-block">
+                                <span class="nav-link" title="wishlist" style="cursor:default;" aria-hidden="true"><i class="bi bi-heart"></i></span>
+                              </li>
+                              <?php endif; ?>
                     <div class="dropdown">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="bi bi-person-circle"></i> <?php echo htmlspecialchars($_SESSION['first_name']); ?>

@@ -5,6 +5,6 @@ session_start();
 session_destroy();
 
 // Redirect to home page
-header("Location: /website-popmart/index.php");
+header("Location: /website-popmart-sessions/index.php");
 exit();
 ?>

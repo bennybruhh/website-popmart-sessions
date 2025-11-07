@@ -1,16 +1,14 @@
-// form submissions: handled by validation.js
-// for authentication related functionality
-
-// logout functionality
+// authentication helpers (forms handled in validation.js)
+// logout
 $(document).on('click', '#logoutBtn', function(e) {
     e.preventDefault();
     
     if (confirm('Are you sure you want to logout?')) {
         $.ajax({
             type: 'POST',
-            url: '/website-popmart/db/logout_process.php',
+            url: '/website-popmart-sessions/db/logout_process.php',
             success: function(response) {
-                // reload the page to update the header
+                // reload to refresh header
                 location.reload();
             },
             error: function() {
@@ -20,11 +18,11 @@ $(document).on('click', '#logoutBtn', function(e) {
     }
 });
 
-// if user is not logged in, clicking cart page links triggers login modal
+// open login modal when visiting cart if not logged in
 $(document).on('click', 'a[href$="/cart.php"], a[href$="cart.php"]', function(e) {
     if (window.IS_LOGGED_IN) return; // allow when logged in
     e.preventDefault();
-    // inline feedback if login modal is already open
+    // inline feedback
     if ($('#loginModal').length) {
         var loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
         loginModal.show();
@@ -35,7 +33,7 @@ $(document).on('click', 'a[href$="/cart.php"], a[href$="cart.php"]', function(e)
         }
     } else {
         // fallback: navigate to index where modal exists
-        window.location.href = '/website-popmart/index.php#login';
+        window.location.href = '/website-popmart-sessions/index.php#login';
     }
 });
 
@@ -44,7 +42,7 @@ $(function(){
     function peso(n){ return new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' }).format(n); }
     function clampQty(q, max){ q = parseInt(q||'1',10); if(isNaN(q)||q<1) q=1; if(max && q>max) q=max; return q; }
     function updateCartBadge(){
-        $.get('/website-popmart/db/cart_count.php', function(r){
+        $.get('/website-popmart-sessions/db/cart_count.php', function(r){
             if (typeof r === 'string') { try { r = JSON.parse(r); } catch(_e) { r = { count: 0 }; } }
             var count = (r && typeof r.count !== 'undefined') ? r.count : 0;
             var badge = document.getElementById('cartCount');
@@ -56,7 +54,7 @@ $(function(){
     // initialize badge on load if logged in
     if (window.IS_LOGGED_IN) updateCartBadge();
 
-    // Open modal with product data (or prompt login if not logged in)
+    // open add-to-cart modal (or prompt login)
     $(document).on('click', '.add-to-cart', function(e){
         if (!window.IS_LOGGED_IN) {
             e.preventDefault();
@@ -93,13 +91,13 @@ $(function(){
     $(document).on('click', '#qtyPlus', function(){ $('#qtyInput').val(clampQty($('#qtyInput').val())+1); recalc(); });
     $(document).on('input', '#qtyInput', recalc);
 
-    // Confirm add to cart
+    // confirm add to cart
     $(document).on('click', '#confirmAddToCartBtn', function(){
         const productId = $('#cartModalProductId').val();
         const quantity = clampQty($('#qtyInput').val());
         $.ajax({
             type: 'POST',
-            url: '/website-popmart/db/cart_add.php',
+            url: '/website-popmart-sessions/db/cart_add.php',
             data: { product_id: productId, quantity: quantity },
             dataType: 'json',
             success: function(r){
@@ -125,7 +123,31 @@ $(function(){
                     } catch(_e) { alert(r.message || 'Failed to add to cart'); }
                 }
             },
-            error: function(){ alert('Network error. Please try again.'); }
+            error: function(xhr, status, err){
+                // try to recover JSON if parse failed
+                try {
+                    var text = xhr && xhr.responseText ? xhr.responseText.trim() : '';
+                    if (text) {
+                        var parsed = JSON.parse(text);
+                        if (parsed && parsed.success) {
+                            try { bootstrap.Modal.getInstance(document.getElementById('addToCartModal')).hide(); } catch(_e) {}
+                            try {
+                                var toastEl = document.getElementById('globalToast');
+                                var body = document.getElementById('globalToastMessage');
+                                if (body) body.textContent = 'Added to your cart!';
+                                var toast = new bootstrap.Toast(toastEl, { delay: 1500 });
+                                toast.show();
+                            } catch(_err) {}
+                            updateCartBadge();
+                            return;
+                        }
+                    }
+                } catch (e) {
+                    console.error('Error parsing cart_add response:', e, xhr && xhr.responseText);
+                }
+                // fallback network error
+                alert('Network error. Please try again.');
+            }
         });
     });
 });

@@ -4,20 +4,21 @@
 </footer>
 
 <!-- jquery and javascript -->
-<script src="/website-popmart/dist/jquery.min.js"></script>
-<script src="/website-popmart/dist/bootstrap.bundle.min.js"></script>
+<script src="/website-popmart-sessions/dist/jquery.min.js"></script>
+<script src="/website-popmart-sessions/dist/bootstrap.bundle.min.js"></script>
 
 <!-- jquery validation for online -->
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/additional-methods.min.js"></script> -->
 
 <!-- jquery validations locally -->
-<script src="/website-popmart/dist/jquery.validate.min.js"></script>
-<script src="/website-popmart/dist/additional-methods.min.js"></script>
+<script src="/website-popmart-sessions/dist/jquery.validate.min.js"></script>
+<script src="/website-popmart-sessions/dist/additional-methods.min.js"></script>
 
-<script src="/website-popmart/js/validation.js"></script>
-<script src="/website-popmart/js/animation.js"></script>
-<script src="/website-popmart/js/auth.js"></script>
+<script src="/website-popmart-sessions/js/validation.js"></script>
+<script src="/website-popmart-sessions/js/animation.js"></script>
+<script src="/website-popmart-sessions/js/auth.js"></script>
+<script src="/website-popmart-sessions/js/wishlist.js"></script>
 
   <script>
     // breadcrumb (guards to avoid errors on pages without these elements)

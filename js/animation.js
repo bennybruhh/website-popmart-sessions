@@ -1,7 +1,8 @@
-  //scroll hide/show navbar
-  let lastScrollTop = 0;
-  const navbar = document.getElementById("mainNavbar");
+// hide/show navbar on scroll (guard DOM elements)
+let lastScrollTop = 0;
+const navbar = document.getElementById("mainNavbar");
 
+if (navbar) {
   window.addEventListener("scroll", function () {
     let scrollTop = window.scrollY;
 
@@ -13,13 +14,16 @@
 
     lastScrollTop = scrollTop;
   });
+}
 
-  document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   const banner = document.querySelector(".contact-banner");
 
-  // resets the class to trigger animation each timethe  page loads
-  banner.classList.remove("show");
-  setTimeout(() => {
-    banner.classList.add("show");
-  }, 100); 
+  // trigger banner animation on load
+  if (banner) {
+    banner.classList.remove("show");
+    setTimeout(() => {
+      banner.classList.add("show");
+    }, 100);
+  }
 });

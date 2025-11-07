@@ -1,4 +1,8 @@
-<?php 
+<?php
+require 'includes/session_check.php';
+
+require_once 'db/db_connect.php';
+
   $activePage = 'cart';
   include 'includes/header.php';
   include 'includes/modals.php';
@@ -170,7 +174,7 @@
     });
     function saveQty($row){ updateServer($row.data('product-id'), clamp($row.find('.qty-input').val())); }
     function updateServer(productId, quantity, cb){
-      $.post('/website-popmart/db/cart_update.php',{product_id:productId,quantity:quantity})
+      $.post('/website-popmart-sessions/db/cart_update.php',{product_id:productId,quantity:quantity})
         .done(function(r){ if(typeof r==='string'){ try{ r=JSON.parse(r);}catch(e){} }
           if(r && r.success){ if(cb) cb(); } else { console.warn('Failed to update cart'); }
         });
@@ -179,11 +183,11 @@
     // added here to make the checkout button works
     $(document).on('click','#checkoutBtn',function(){
       $(this).prop('disabled', true).text('Processing...');
-      $.post('/website-popmart/db/checkout.php', {}, function(r){
+      $.post('/website-popmart-sessions/db/checkout.php', {}, function(r){
         if(typeof r === 'string'){ try{ r = JSON.parse(r); }catch(e){} }
         if(r && r.success){
           alert('Checkout successful! Your order has been placed.');
-          window.location.href = '/website-popmart/index.php';
+          window.location.href = '/website-popmart-sessions/index.php';
         } else {
           alert('Checkout failed: ' + (r.message || 'Unknown error'));
           $('#checkoutBtn').prop('disabled', false).text('CHECK OUT');

@@ -32,6 +32,7 @@
                   <h5 class="card-title-best-seller"><?php echo htmlspecialchars($row['name']); ?></h5>
                   <p class="card-text">Php <?php echo number_format((float)$row['price'], 2); ?></p>
                   <a href="#" class="btn btn-primary w-100 add-to-cart" data-product-id="<?php echo (int)$row['id']; ?>" data-price="<?php echo (float)$row['price']; ?>" data-stock="<?php echo (int)$row['stock']; ?>" role="button">Add to Cart</a>
+                  <button class="btn btn-outline-secondary w-100 mt-2 add-wishlist" data-product-id="<?php echo (int)$row['id']; ?>">♡ Add to wishlist</button>
                 </div>
               </div>
             </div>

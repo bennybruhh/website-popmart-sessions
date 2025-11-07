@@ -65,59 +65,59 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 -- ================= CRYBABY =================
 INSERT INTO products (name, description, image_path, price, category, stock)
 VALUES
-('CRYBABY Powerpuff Girls Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-1.png', 300.00, 'crybaby', 100),
-('CRYBABY Crying for Love Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-2.png', 300.00, 'crybaby', 100),
-('CRYBABY Wild but Cute Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-3.png', 300.00, 'crybaby', 100),
-('CRYBABY Crying Again 1 Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-4.png', 300.00, 'crybaby', 100),
-('CRYBABY Crying Parade Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-5.png', 300.00, 'crybaby', 100),
-('CRYBABY Sad Club Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-6.png', 300.00, 'crybaby', 100),
-('CRYBABY Crying Again 2 Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-7.png', 300.00, 'crybaby', 100),
-('CRYBABY Sunset Concert Series', 'Description here', '/website-popmart/img/products-img-banner/products-crybaby/crybaby-8.png', 300.00, 'crybaby', 100);
+('CRYBABY Powerpuff Girls Series', 'Description here', '/website-popmart-session/img/products-img-banner/products-crybaby/crybaby-1.png', 300.00, 'crybaby', 100),
+('CRYBABY Crying for Love Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-2.png', 300.00, 'crybaby', 100),
+('CRYBABY Wild but Cute Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-3.png', 300.00, 'crybaby', 100),
+('CRYBABY Crying Again 1 Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-4.png', 300.00, 'crybaby', 100),
+('CRYBABY Crying Parade Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-5.png', 300.00, 'crybaby', 100),
+('CRYBABY Sad Club Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-6.png', 300.00, 'crybaby', 100),
+('CRYBABY Crying Again 2 Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-7.png', 300.00, 'crybaby', 100),
+('CRYBABY Sunset Concert Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-crybaby/crybaby-8.png', 300.00, 'crybaby', 100);
 
 -- ================= HIRONO =================
 INSERT INTO products (name, description, image_path, price, category, stock)
 VALUES
-('HIRONO The Other One Series', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-1.png', 500.00, 'hirono', 100),
-('HIRONO x Keith Haring Figurine', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-2.png', 999.00, 'hirono', 100),
-('HIRONO Little Mischief Series', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-3.png', 500.00, 'hirono', 100),
-('HIRONO City of Mercy Series', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-4.png', 500.00, 'hirono', 100),
-('HIRONO Echo Series', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-5.png', 500.00, 'hirono', 100),
-('HIRONO Little Prince', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-6.png', 500.00, 'hirono', 100),
-('HIRONO Mime Series', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-7.png', 500.00, 'hirono', 100),
-('HIRONO The Pianist', 'Description here', '/website-popmart/img/products-img-banner/products-hirono/hirono-8.png', 999.00, 'hirono', 100);
+('HIRONO The Other One Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-1.png', 500.00, 'hirono', 100),
+('HIRONO x Keith Haring Figurine', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-2.png', 999.00, 'hirono', 100),
+('HIRONO Little Mischief Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-3.png', 500.00, 'hirono', 100),
+('HIRONO City of Mercy Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-4.png', 500.00, 'hirono', 100),
+('HIRONO Echo Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-5.png', 500.00, 'hirono', 100),
+('HIRONO Little Prince', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-6.png', 500.00, 'hirono', 100),
+('HIRONO Mime Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-7.png', 500.00, 'hirono', 100),
+('HIRONO The Pianist', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-hirono/hirono-8.png', 999.00, 'hirono', 100);
 
 -- ================= MIFFY =================
 INSERT INTO products (name, description, image_path, price, category, stock)
 VALUES
-('MIFFY Doing Things Blind Box', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-1.png', 300.00, 'miffy', 100),
-('MIFFY Goes Outside Blind Box', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-2.png', 300.00, 'miffy', 100),
-('MIFFY in the Snow Blind Box', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-3.png', 300.00, 'miffy', 100),
+('MIFFY Doing Things Blind Box', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-1.png', 300.00, 'miffy', 100),
+('MIFFY Goes Outside Blind Box', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-2.png', 300.00, 'miffy', 100),
+('MIFFY in the Snow Blind Box', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-3.png', 300.00, 'miffy', 100),
 ('MIFFY and friends Bundle of Lights', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-4.png', 499.00, 'miffy', 100),
-('MIFFY 14-inch Stuffy Plush', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-5.png', 799.00, 'miffy', 100),
-('MIFFY Bluetooth Earphones', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-6.png', 1499.00, 'miffy', 100),
-('MIFFY Silicone Storage Bag', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-7.png', 349.00, 'miffy', 100),
-('MIFFY Character Sling Bag', 'Description here', '/website-popmart/img/products-img-banner/products-miffy/miffy-8.png', 699.00, 'miffy', 100);
+('MIFFY 14-inch Stuffy Plush', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-5.png', 799.00, 'miffy', 100),
+('MIFFY Bluetooth Earphones', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-6.png', 1499.00, 'miffy', 100),
+('MIFFY Silicone Storage Bag', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-7.png', 349.00, 'miffy', 100),
+('MIFFY Character Sling Bag', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-miffy/miffy-8.png', 699.00, 'miffy', 100);
 
 -- ================= MOFUSAND =================
 INSERT INTO products (name, description, image_path, price, category, stock)
 VALUES
-('MOFUSAND Pastries', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-1.png', 300.00, 'mofusand', 100),
-('MOFUSAND Journey', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-2.png', 300.00, 'mofusand', 100),
-('MOFUSAND Hippers', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-3.png', 249.00, 'mofusand', 100),
-('MOFUSAND Sharks', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-4.png', 399.00, 'mofusand', 100),
-('MOFUSAND Tempura', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-5.png', 300.00, 'mofusand', 100),
-('MOFUSAND Plushies', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-6.png', 999.00, 'mofusand', 100),
-('MOFUSAND Berry', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-7.png', 999.00, 'mofusand', 100),
-('MOFUSAND Fluffy', 'Description here', '/website-popmart/img/products-img-banner/products-mofusand/mofusand-8.png', 300.00, 'mofusand', 100);
+('MOFUSAND Pastries', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-1.png', 300.00, 'mofusand', 100),
+('MOFUSAND Journey', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-2.png', 300.00, 'mofusand', 100),
+('MOFUSAND Hippers', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-3.png', 249.00, 'mofusand', 100),
+('MOFUSAND Sharks', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-4.png', 399.00, 'mofusand', 100),
+('MOFUSAND Tempura', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-5.png', 300.00, 'mofusand', 100),
+('MOFUSAND Plushies', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-6.png', 999.00, 'mofusand', 100),
+('MOFUSAND Berry', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-7.png', 999.00, 'mofusand', 100),
+('MOFUSAND Fluffy', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-mofusand/mofusand-8.png', 300.00, 'mofusand', 100);
 
 -- ================= SMISKI =================
 INSERT INTO products (name, description, image_path, price, category, stock)
 VALUES
-('SMISKI Museum Series', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-1.png', 300.00, 'smiski', 100),
-('SMISKI Sunday Series', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-2.png', 300.00, 'smiski', 100),
-('SMISKI Moving Series', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-3.png', 300.00, 'smiski', 100),
-('SMISKI Classic Series', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-4.png', 300.00, 'smiski', 100),
-('SMISKI Birthday Series', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-5.png', 300.00, 'smiski', 100),
-('SMISKI Hippers', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-6.png', 300.00, 'smiski', 100),
-('SMISKI Bed Series', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-7.png', 300.00, 'smiski', 100),
-('SMISKI Touch Light', 'Description here', '/website-popmart/img/products-img-banner/products-smiski/smiski-8.png', 300.00, 'smiski', 100);
+('SMISKI Museum Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-1.png', 300.00, 'smiski', 100),
+('SMISKI Sunday Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-2.png', 300.00, 'smiski', 100),
+('SMISKI Moving Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-3.png', 300.00, 'smiski', 100),
+('SMISKI Classic Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-4.png', 300.00, 'smiski', 100),
+('SMISKI Birthday Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-5.png', 300.00, 'smiski', 100),
+('SMISKI Hippers', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-6.png', 300.00, 'smiski', 100),
+('SMISKI Bed Series', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-7.png', 300.00, 'smiski', 100),
+('SMISKI Touch Light', 'Description here', '/website-popmart-sessions/img/products-img-banner/products-smiski/smiski-8.png', 300.00, 'smiski', 100);
